@@ -1,1 +1,63 @@
 // put your styles here
+
+$main-font: "helvetica Neue", Arial, Helvetica, sans-serif;
+
+$black: #000000;
+$white: #fff;
+$color-accent: #ff3700;
+$color-text: #555555;
+
+$line-global: 20px;
+$gutter-global: $line-global * 2;
+
+// base
+
+* {
+  font-family: $main-font;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: $black;
+  line-height: $line-global;
+}
+
+body {
+  background-color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+// utility classes
+
+.grid {
+  display: grid;
+  grid-gap: $gutter-global;
+}
+
+.two-columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.main-content {
+  min-height: 100vh;
+  padding: $gutter-global;
+}
+
+// index styles
+
+#page-index {
+}
