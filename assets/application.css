@@ -60,7 +60,11 @@ label {
   color: #dedede;
 }
 
-select {
+.styled-select {
+  position: relative;
+}
+
+.styled-select select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -80,7 +84,26 @@ select {
   font-size: 15px;
   line-height: 20px;
   padding: 20px;
-  border: 1px solid #dedede;
+  border: 1px solid #000000;
+}
+
+.styled-select .select-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  border-left: 1px solid #000000;
+  pointer-events: none;
+}
+
+.styled-select .select-arrow img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
 }
 
 button {
@@ -147,6 +170,10 @@ button {
   float: right;
 }
 
+#product-info-content {
+  grid-row-gap: 20px;
+}
+
 .grid {
   display: -ms-grid;
   display: grid;
@@ -187,7 +214,7 @@ button {
 .main-content {
   min-height: 100vh;
   padding: 40px;
-  width: 50%;
+  width: calc(50% + 20px);
   margin-left: auto;
 }
 
@@ -197,7 +224,7 @@ button {
   top: 40px;
   bottom: 40px;
   background-color: green;
-  width: 50%;
+  width: calc(50% - 20px);
 }
 
 .sticky-side-image img {

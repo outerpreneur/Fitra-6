@@ -14,7 +14,7 @@
       <h1 class="headline-big">{{ mainProduct.title | remove: 'Activity Band' }}</h1>
     </div>
     {% comment %} beging info grid {% endcomment %}
-    <div class="grid two-columns">
+    <div id="product-info-content" class="grid two-columns">
       <div class="headline valign-bottom">
         <h2>
           {{ 'product.copy.headline' | t }}
@@ -43,13 +43,18 @@
           method="post"
           enctype="multipart/form-data"
           id="add-to-cart-form">
-          <select name="id" id="productSelect">
-            {% for variant in mainProduct.variants %}
-              <option value="{{ variant.id }}">
-                {{ variant.title }}
-              </option>
-            {% endfor %}
-          </select>
+          <div class="styled-select">
+            <select name="id" id="productSelect">
+              {% for variant in mainProduct.variants %}
+                <option value="{{ variant.id }}">
+                  {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+            <div class="select-arrow">
+              <img src="{{ 'icon-arrow-down.svg' | asset_url }}">
+            </div>
+          </div>
           {{ current_variant.price | money }}
           <button
             type="submit"

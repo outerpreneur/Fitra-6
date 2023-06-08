@@ -16,6 +16,7 @@ $body-font-size: 15px;
 $label-font-size: 12px;
 
 $standard-border: 1px solid $color-border;
+$black-border: 1px solid $black;
 
 @mixin reset-input {
   appearance: none;
@@ -100,13 +101,36 @@ label {
   color: $color-label;
 }
 
-select {
+.styled-select {
+  position: relative;
+}
+
+.styled-select select {
   @include reset-input;
   width: 100%;
   font-size: $body-font-size;
   line-height: $line-global;
   padding: $line-global;
-  border: $standard-border;
+  border: $black-border;
+}
+
+.styled-select .select-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: $line-global * 3;
+  text-align: center;
+  line-height: $line-global * 3;
+  border-left: $black-border;
+  pointer-events: none;
+}
+
+.styled-select .select-arrow img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
 }
 
 button {
@@ -161,6 +185,10 @@ button {
   float: right;
 }
 
+#product-info-content {
+  grid-row-gap: $gutter-global/2;
+}
+
 // utility classes
 
 .grid {
@@ -187,7 +215,7 @@ button {
 .main-content {
   min-height: 100vh;
   padding: $gutter-global;
-  width: 50%;
+  width: calc(50% + #{$gutter-global/2});
   margin-left: auto;
 }
 
@@ -197,7 +225,7 @@ button {
   top: $gutter-global;
   bottom: $gutter-global;
   background-color: green;
-  width: 50%;
+  width: calc(50% - #{$gutter-global/2});
 }
 
 .sticky-side-image img {
