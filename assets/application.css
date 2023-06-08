@@ -31,6 +31,10 @@ ol {
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+}
+
 .headline-big {
   font-size: 22vw;
   line-height: 20px;
@@ -172,6 +176,17 @@ button {
 
 #product-info-content {
   grid-row-gap: 20px;
+}
+
+.link-to-cart .cart-item-count {
+  display: inline-block;
+}
+
+.link-to-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 40px;
 }
 
 .grid {

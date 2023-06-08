@@ -14,11 +14,16 @@
   
   {% if template != 'cart' %}
     <a href="/cart" class="link-to-cart">
+    <span class="cart-text">
       {% if cart.item_count > 0 %}
         {{ 'cart.button.filled' | t }}
       {%  else %}
       {{ 'cart.button.empty' | t }}
       {% endif %}
+    </span>
+      <span class="cart-item-count">
+        {{ cart.item_count }}
+      </span>
     </a>
   {% else %}
       <a href="/" class="link-to-home">
