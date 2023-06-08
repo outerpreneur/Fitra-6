@@ -70,6 +70,10 @@ ol {
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+}
+
 // Style guide
 
 .headline-big {
@@ -187,6 +191,19 @@ button {
 
 #product-info-content {
   grid-row-gap: $gutter-global/2;
+}
+
+.link-to-cart .cart-item-count {
+  display: ;
+}
+
+// global styles
+
+.link-to-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: $gutter-global;
 }
 
 // utility classes
