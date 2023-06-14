@@ -1,5 +1,5 @@
 * {
-  font-family: "helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "Rubik", "helvetica Neue", Arial, Helvetica, sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -279,7 +279,6 @@ button {
   left: 0;
   top: 40px;
   bottom: 40px;
-  background-color: green;
   width: calc(50% - 20px);
 }
 
