@@ -14,14 +14,14 @@
 <body class="template-{{template}}">
   
   {% if template != 'cart' %}
-<a href="/cart" class="link-to-cart {% if cart.item_count > 0 %}cart-filled{% endif %}">
-    <span class="cart-text">
-      {% if cart.item_count > 0 %}
-        {{ 'cart.button.filled' | t }}
-      {%  else %}
-      {{ 'cart.button.empty' | t }}
-      {% endif %}
-    </span>
+    <a href="/cart" class="link-to-cart {% if cart.item_count > 0 %}cart-filled{% endif %}">
+      <span class="cart-text">
+        {% if cart.item_count > 0 %}
+          {{ 'cart.button.filled' | t }}
+        {%  else %}
+        {{ 'cart.button.empty' | t }}
+        {% endif %}
+      </span>
       <span class="cart-item-count">
         {{ cart.item_count }}
       </span>
@@ -31,10 +31,10 @@
       {{ 'cart.button.close' | t }}
       </a>
   {% endif %}
-  
-
-  </a>
-  <main role="main">
+  {% if template != 'cart' and template != 'index' %}
+    {% render 'error-404' %}
+  {% endif %}
+  <main role="main" {% if template != 'cart' and template != 'index' %}style="display: none;" {% endif %}>
     {{ content_for_layout }}
   </main>
 </body>
