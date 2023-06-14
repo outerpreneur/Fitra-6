@@ -37,8 +37,9 @@
     "lines": {
       "title": "Order Summary",
       "shipping": "Shipping",
-      "subtotal": "subtotal",
-      "Free": "Free"
+      "subtotal": "Subtotal",
+      "free": "Free",
+      "remove": "Remove"
     }
   }
 }

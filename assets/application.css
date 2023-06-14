@@ -129,7 +129,7 @@ button {
   font-size: 15px;
   line-height: 20px;
   padding: 20px;
-  background-color: #ff3700;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -162,6 +162,10 @@ button {
   margin-top: -20px;
 }
 
+#add-to-cart-button {
+  background: #ff3700;
+}
+
 #add-to-cart-button .product-price {
   float: right;
 }
@@ -183,6 +187,10 @@ button {
   right: 0;
   padding: 40px;
   color: #555555;
+}
+
+.link-to-home {
+  color: #000000;
 }
 
 .link-to-cart .cart-item-count {
@@ -292,12 +300,19 @@ button {
   color: #fff;
 }
 
+#cart.cart-filled {
+  background: #ff3700;
+}
+
 #cart a {
   color: inherit;
 }
 
 #cart-title {
   position: relative;
+}
+
+#cart:not(.cart-filled) #cart-title {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: #fff;
   -webkit-text-stroke-width: 2px;
@@ -317,6 +332,17 @@ button {
   top: 1em;
   right: 0;
   border: solid 2px #fff;
+}
+
+#cart.cart-filled .cart-item-count {
+  border: 0;
+  background: #000000;
+}
+
+#cart.cart-filled #cart-content {
+  padding-bottom: 160px;
+  -ms-grid-rows: auto 40px;
+  grid-template-rows: auto 40px;
 }
 
 #cart-empty-lines,
@@ -340,4 +366,80 @@ button {
 
 #back-to-fitra {
   margin-bottom: 20px;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 400;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+tbody tr {
+  border-top: 1px #fff solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+td {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+td:last-child {
+  text-align: right;
+  vertical-align: top;
+}
+
+.remove-line {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  padding: 20px 10px;
+  display: block;
+  text-align: center;
+  width: 40px;
+}
+
+.remove-text {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  padding: 20px 0 20px 20px;
+  display: none;
+  background: #ff3700;
+  color: #000000;
+}
+
+.remove-line:hover .remove-text {
+  display: block;
+}
+
+#cart-totals {
+  border-bottom: 1px solid #fff;
+}
+
+#cart-form-wrap {
+  -ms-grid-row-span: 2;
+  grid-row: span 2;
+  position: relative;
+}
+
+#checkout-button {
+  position: absolute;
+  width: 100%;
+  bottom: -160px;
+  left: 0;
+}
+
+#cart-support p {
+  color: inherit;
 }
